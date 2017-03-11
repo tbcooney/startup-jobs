@@ -22,10 +22,20 @@ class JobsController < ApplicationController
 		end
 	end
 
+	def edit
+	end
+
 	def update
+		if @job.update(job_params)
+			redirect_to jobs_path
+		else
+			render 'Edit'
+		end
 	end
 
 	def destroy
+		@job.destroy
+		redirect_to jobs_path
 	end
 
 	private
