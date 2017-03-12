@@ -1,6 +1,17 @@
-- @jobs.each do |job|
-	%h2= link_to job.title, job
-	%p= job.company
-	%p= time_ago_in_words(job.created_at)
-
-= link_to 'New Job', new_job_path
+.wrapper_with_padding
+	#featured_jobs.clearfix
+		- @jobs.each do |job|
+			%a{ href: (url_for [job]) }
+				.job
+					%p.title= job.title
+					%p.company= job.company
+					%p.date= time_ago_in_words(job.created_at)
+	#list_jobs.clearfix
+		%ol
+			- @jobs.each do |job|
+				%li
+					%a{ href: (url_for [job]) }
+						.job
+							%p.title= job.title
+							%p.company= job.company
+							%p.date= time_ago_in_words(job.created_at)

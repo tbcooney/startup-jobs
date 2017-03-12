@@ -39,14 +39,46 @@ body {
 }
 
 button, .button {
+	display: inline-block;
 	border: none;
 	outline: none;
 	background: $red;
 	padding: 1rem 3.5rem;
-	border-radius: 2rem;
+	border-radius: 4px;
+	transition: all 0.25s ease 0s;
 	a {
 		color: white;
 		text-decoration: none;
+	}
+	&:hover {
+		color: white;
+		background: #ff7e82;
+	}
+	&:focus {
+		background: red;
+	}
+}
+
+button, .button-secondary {
+	display: inline-block;
+	border: none;
+	outline: none;
+	color: $dark_gray;
+	background: $light_gray;
+	font-size: 1rem;
+	padding: 1rem 2rem;
+	border-radius: 4px;
+	transition: all 0.25s ease 0s;
+	a {
+		color: $dark_gray;
+		text-decoration: none;
+	}
+	&:hover {
+		color: white;
+		background: $dark_gray;
+	}
+	&:focus {
+		background: red;
 	}
 }
 
@@ -64,12 +96,11 @@ a {
 }
 
 header {
-	background: $dark_gray;
-	position: fixed;
+	background: transparent;
+	position: absolute;
 	top: 0;
 	width: 100%;
 	padding: 1.75rem 0;
-	border-bottom: 7px solid $red;
 	.header_inner {
 		width: 90%;
 		margin: 0 auto;
@@ -82,7 +113,7 @@ header {
 			float: right;
 			a {
 				text-decoration: none;
-				color: white;
+				color: black;
 				font-size: 1.1rem;
 				line-height: 1.5;
 				margin-left: 1rem;
