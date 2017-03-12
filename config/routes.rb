@@ -3,5 +3,9 @@ Rails.application.routes.draw do
   get 'welcome/index'
   resources	:jobs
 
+  authenticated :user do
+  	root 'jobs#index'
+  end
+
   root 'welcome#index'
 end
