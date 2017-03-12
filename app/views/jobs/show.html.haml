@@ -3,5 +3,6 @@
 %p= @job.description
 
 = link_to 'Jobs', jobs_path
-= link_to 'Edit', edit_job_path(@job)
-= link_to 'Delete', job_path(@job), method: :delete, data: { confirm: 'Are you sure?' }
+- if (user_signed_in? && (current_user.id == @job.user_id))
+	= link_to 'Edit', edit_job_path(@job)
+	= link_to 'Delete', job_path(@job), method: :delete, data: { confirm: 'Are you sure?' }
