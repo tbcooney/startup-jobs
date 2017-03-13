@@ -52,6 +52,10 @@
 #list_jobs {
 	ol {
 		padding: 0;
+		color: #C0C1C1;
+	    margin: 1rem 0;
+	    font-size: 1em;
+	    font-weight: 700;
 	}
 	li {
 		list-style: none;
@@ -62,6 +66,7 @@
 		padding: 1.5rem 0;
 		border-bottom: 1px solid #dce0e0;
 		position: relative;
+		font-weight: 400;
 		.title {
 			@include bold_font;
 			color: $red;
@@ -73,7 +78,7 @@
 			color: black;
 			font-size: .85rem;
 		}
-		.date {
+		.job_url {
 			display: inline-block;
 			color: black;
 			float: right;
