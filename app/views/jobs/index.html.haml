@@ -6,7 +6,7 @@
 			= link_to "New Job", new_job_path, class: 'button'
 			.section_header Now Hiring
 			#featured_jobs.clearfix
-				- @jobs.each do |job|
+				- @featured_jobs.each do |job|
 					%a{ href: (url_for [job]) }
 						.job
 							%p.title= job.title
@@ -25,7 +25,5 @@
 									.job
 										%p.title= job.title
 										%p.company= job.company
-										%p.job_url= job.url
-
-										
+										%p.job_url= job.url	
 					= will_paginate @jobs
