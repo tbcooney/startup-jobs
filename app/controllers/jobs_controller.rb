@@ -3,7 +3,8 @@ class JobsController < ApplicationController
 	before_action :authenticate_user!,only:[:new]
 
 	def index
-		@jobs = Job.all.order("created_at DESC")
+		@jobs = Job.where(Job.arel_table[:created_at].gteq("%D")).order("created_at DESC")
+		@job_days = @jobs.group_by {|job| job.created_at.to_date }
 	end
 
 	def show

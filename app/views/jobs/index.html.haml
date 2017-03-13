@@ -17,10 +17,12 @@
 			.section_header All Jobs
 			#list_jobs.clearfix
 				%ol
-					- @jobs.each do |job|
-						%li
-							%a{ href: (url_for [job]) }
-								.job
-									%p.title= job.title
-									%p.company= job.company
-									%p.date= job.url
+					- @job_days.each do |day, jobs|
+						= day.strftime("%D")
+						- jobs.each do |job|
+							%li
+								%a{ href: (url_for [job]) }
+									.job
+										%p.title= job.title
+										%p.company= job.company
+										%p.date= job.url
