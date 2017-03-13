@@ -1,3 +1,10 @@
+.section_header {
+	color: $light_gray;
+	margin: 1rem 0;
+	font-size: 1em;
+	font-weight: 700;
+}
+
 #featured_jobs {
 	.job {
 		background: white;
@@ -22,7 +29,13 @@
 			letter-spacing: 1px;
 		}
 		.company {
+			display: inline-block;
 			color: black;
+			font-size: .85rem;
+		}
+		.job_url {
+			display: inline-block;
+			float: right;
 			font-size: .85rem;
 		}
 		.date {
@@ -44,7 +57,6 @@
 	}
 	.job {
 		display: block;
-		min-height: 150px;
 		margin: 1rem 1%;
 		padding: 1.5rem 0;
 		border-bottom: 1px solid #dce0e0;
@@ -56,12 +68,14 @@
 			letter-spacing: 1px;
 		}
 		.company {
+			display: inline-block;
 			color: black;
 			font-size: .85rem;
 		}
 		.date {
-			position: absolute;
+			display: inline-block;
 			color: black;
+			float: right;
 			font-size: .85rem;
 		}
 	}

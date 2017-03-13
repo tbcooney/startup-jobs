@@ -1,22 +1,22 @@
 #banner {
-	background-image: url(image_path("welcome_banner_image.jpg"));
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: top center;
-	width: 100%;
 	min-height: 500px;
 	display: table;
 	.banner_content {
 		display: table-cell;
 		vertical-align: middle;
+		strong {
+			font-weight: 700;
+			color: $red;
+		}
 		h1 {
-			@include bold_font;
-			color: black;
-			font-size: 3.5rem;
-			margin: 0;
+			color: $dark_gray;
+			font-size: 4rem;
+			font-weight: 300;
+			line-height: 5rem;
+			margin-bottom: 2rem;
 		}
 		p {
-			font-size: 1.5rem;
+			font-size: 1.2rem;
 			margin: 0 0 2.5rem 0;
 			color: rgba(0, 0, 0, 0.5);
 		}

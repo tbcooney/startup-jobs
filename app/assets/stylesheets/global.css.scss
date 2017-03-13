@@ -5,7 +5,6 @@ $red: #FF5A5F;
 @mixin bold_font {
 	font-family: "Brandon Grotesque","Helvetica Neue", Helvetica, sans-serif;
 	font-weight: bold;
-	text-transform: uppercase;
 }
 
 * {
@@ -38,6 +37,26 @@ body {
 	clear: both;
 }
 
+#content {
+	.page_header {
+		strong {
+			font-weight: 700;
+			color: $red;
+		}
+		h1 {
+			color: $dark_gray;
+			font-size: 4rem;
+			font-weight: 300;
+			line-height: 5rem;
+			margin-bottom: 2rem;
+		}
+		p {
+			font-size: 1.2rem;
+			color: rgba(0, 0, 0, 0.5);
+		}
+	}
+}
+
 button, .button {
 	display: inline-block;
 	border: none;
@@ -45,6 +64,7 @@ button, .button {
 	background: $red;
 	padding: 1rem 3.5rem;
 	border-radius: 4px;
+	font-weight: 700;
 	transition: all 0.25s ease 0s;
 	a {
 		color: white;
@@ -82,6 +102,36 @@ button, .button-secondary {
 	}
 }
 
+button, .button-outline {
+	display: inline-block;
+	outline: none;
+	border: 1px solid $red;
+	color: $red;
+	font-size: 1rem;
+	padding: 1rem 3.5rem;
+	border-radius: 4px;
+	transition: all 0.25s ease 0s;
+	&:hover {
+		border: 1px solid #ff7e82;
+		color: #ff7e82;
+	}
+}
+
+button, .button-apply {
+	display: block;
+	outline: none;
+	border: 1px solid $red;
+	color: $red;
+	font-size: 1rem;
+	padding: 1rem 3.5rem;
+	border-radius: 4px;
+	transition: all 0.25s ease 0s;
+	&:hover {
+		border: 1px solid #ff7e82;
+		color: #ff7e82;
+	}
+}
+
 .button {
 	color: white;
 	margin: 2rem 0;
@@ -113,8 +163,8 @@ header {
 			float: right;
 			a {
 				text-decoration: none;
-				color: black;
-				font-size: 1.1rem;
+				color: $dark_gray;
+				font-size: .8rem;
 				line-height: 1.5;
 				margin-left: 1rem;
 				&:hover {
@@ -126,29 +176,84 @@ header {
 }
 
 footer {
-	background: $dark_gray;
+	border-top: 1px solid #DCE0E0;
 	width: 100%;
 	padding: 2rem 0;
-	color: white;
 	text-align: center;
-	@include bold_font;
 	p {
 		margin: 0;
 		font-size: .85rem;
 	}
+	.header_inner {
+		width: 90%;
+		margin: 0 auto;
+		#logo {
+			display: inline-block;
+			width: 10rem;
+			float: left;
+		}
+		nav {
+			float: right;
+			a {
+				text-decoration: none;
+				color: $dark_gray;
+				font-size: .8rem;
+				line-height: 1.5;
+				margin-left: 1rem;
+				&:hover {
+					color: $red;
+				}
+			}
+		}
+	}
 }
 
-input[type="text"], input[type="email"], input[type="password"], textarea {
+select, input[type="text"], input[type="email"], input[type="password"], input[type="url"], textarea {
 	width: 100%;
 	margin-bottom: 1rem;
-	border: 1px solid $light_gray;
+	border: none;
 	border-radius: .4rem;
+	display: block;
+	padding: 0 1rem;
+	font-size: 1.4rem;
+    margin: 0 4% 10px 0;
+    min-width: 130px;
+    letter-spacing: 1px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    background: #F9F9F9;
 }
 
-input[type="text"], input[type="email"], input[type="password"] {
-	height: 40px;
+select, input[type="text"], input[type="email"], input[type="password"], input[type="url"] {
+	height: 72px;
+}
+
+input[type="radio"], input[type="checkbox"] {
+	margin-right: 5px;
 }
 
 textarea {
 	min-height: 200px;
+}
+
+label {
+	font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #575757;
+    text-transform: uppercase;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    padding-bottom: 5px;
+    padding-left: 3px;
+}
+
+.forgot-password {
+	display: inline-block;
+	float: right;
+}
+
+.user_remember_me {
+	display: inline-block;
 }

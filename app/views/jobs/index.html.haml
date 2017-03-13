@@ -1,17 +1,26 @@
 .wrapper_with_padding
-	#featured_jobs.clearfix
-		- @jobs.each do |job|
-			%a{ href: (url_for [job]) }
-				.job
-					%p.title= job.title
-					%p.company= job.company
-					%p.date= time_ago_in_words(job.created_at)
-	#list_jobs.clearfix
-		%ol
-			- @jobs.each do |job|
-				%li
+	#content
+		.page_header
+			%h1 <strong>Find a job.</strong> Find the next journey that awaits you in Toronto.
+			%p Your online job place. All local jobs in one place.
+			= link_to "New Job", new_job_path, class: 'button'
+			.section_header Now Hiring
+			#featured_jobs.clearfix
+				- @jobs.each do |job|
 					%a{ href: (url_for [job]) }
 						.job
 							%p.title= job.title
 							%p.company= job.company
+							%p.job_url= job.url
 							%p.date= time_ago_in_words(job.created_at)
+
+			.section_header All Jobs
+			#list_jobs.clearfix
+				%ol
+					- @jobs.each do |job|
+						%li
+							%a{ href: (url_for [job]) }
+								.job
+									%p.title= job.title
+									%p.company= job.company
+									%p.date= job.url

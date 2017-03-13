@@ -1,11 +1,23 @@
 .wrapper_with_padding
 	#banner
 		.banner_content
-			%h1 Startup Jobs
+			%h1 <strong>Toronto Startup Jobs.</strong> Find the next journey that awaits you in Toronto.
 			%p Your online job place. All local jobs in one place.
-			%button= link_to "Sign Up", new_user_registration_path
-			%button= link_to "View Jobs", jobs_path
-	#testimonial
+			= link_to "Sign up", new_user_registration_path, class: 'button'
+			= link_to "View jobs", jobs_path, class: 'button-outline'
+
+	.section_header Now Hiring
+	#featured_jobs.clearfix
+		- @jobs.each do |job|
+			%a{ href: (url_for [job]) }
+				.job
+					%p.title= job.title
+					%p.company= job.company
+					%p.job_url= job.url
+					%p.date= time_ago_in_words(job.created_at)
+
+	#bottom_cta
 		.wrapper
-			%p.quote "The greatest job application. Period."
-			%p.name - taylor cooney
+			%h2 For Realz!
+			%p I want you to sign up... If you don’t. I will find you!
+			= link_to "View js1`qobs", jobs_path, class: 'button'

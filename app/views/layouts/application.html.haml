@@ -11,14 +11,26 @@
 			= link_to image_tag( ''), root_path, id: "logo"
 			%nav
 				- if user_signed_in?
+					= link_to "Account", edit_user_registration_path
 					= link_to "New Job", new_job_path
 					= link_to "Sign Out", destroy_user_session_path, method: :delete
 				- else
+					= link_to "Sign Up", new_user_registration_path
 					= link_to "Log In", new_user_session_path
-	%p.notice= notice
-	%p.alert= alert
+		.wrapper_with_padding
+			%p.notice= notice
+			%p.alert= alert
 
 	= yield
 
 %footer
-	%p &copy; taylor cooney
+	.header_inner
+		= link_to image_tag( ''), root_path, id: "logo"
+		%nav
+			- if user_signed_in?
+				= link_to "Account", edit_user_registration_path
+				= link_to "New Job", new_job_path
+				= link_to "Sign Out", destroy_user_session_path, method: :delete
+			- else
+				= link_to "Sign Up", new_user_registration_path
+				= link_to "Log In", new_user_session_path
