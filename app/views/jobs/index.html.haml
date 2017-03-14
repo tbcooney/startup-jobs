@@ -1,9 +1,16 @@
 .wrapper_with_padding
 	#content
 		.page_header
-			%h1 <strong>Find a job.</strong> Find the next journey that awaits you in Toronto.
-			%p Your online job place. All local jobs in one place.
-			= link_to "New Job", new_job_path, class: 'button'
+			%div
+				%h1 <strong>Find a job.</strong> Find the next journey that awaits you in Toronto.
+				= link_to "New Job", new_job_path, class: 'button'
+
+			#filter
+				.nav
+					= link_to "Most Recent", jobs_path
+					- Category.all.each do |category|
+						= link_to category.name, jobs_path(category: category.name)
+
 			.section_header Now Hiring
 			#featured_jobs.clearfix
 				- @featured_jobs.each do |job|
@@ -12,18 +19,19 @@
 							%p.title= job.title
 							%p.company= job.company
 							%p.job_url= job.url
-							%p.date= time_ago_in_words(job.created_at)
+							%p.date= time_ago_in_words(job.created_at) + " ago"
 
 			.section_header All Jobs
 			#list_jobs.clearfix
 				%ol
 					- @job_days.each do |day, jobs|
-						= day.strftime("%D")
-						- jobs.each do |job|
-							%li
-								%a{ href: (url_for [job]) }
-									.job
-										%p.title= job.title
-										%p.company= job.company
-										%p.job_url= job.url	
-					= will_paginate @jobs
+						.list_job_group_date
+							= day.strftime("%B %U")
+							- jobs.each do |job|
+								%li
+									%a{ href: (url_for [job]) }
+										.job
+											%p.title= job.title
+											%p.company= job.company
+											%p.job_url= job.url	
+				= will_paginate @jobs

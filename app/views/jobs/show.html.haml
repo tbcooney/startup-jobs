@@ -4,10 +4,10 @@
 		%h2= @job.company
 		%p.date= time_ago_in_words(@job.created_at)
 		%p= @job.description
-		= link_to "Apply for Job", @job.url, class: "button"
+		= link_to "Apply For Job", @job.url, class: "button"
 		%br/
 
 		- if (user_signed_in? && (current_user.id == @job.user_id))
-			= link_to 'Edit', edit_job_path(@job), class: 'button-secondary'
-			= link_to 'Delete', job_path(@job), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button-secondary'
-		= link_to 'Jobs', jobs_path
+			= link_to 'Edit', edit_job_path(@job), class: 'button-outline'
+			= link_to 'Delete', job_path(@job), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button-outline'
+		= link_to 'Back To Jobs', jobs_path, class: 'button-outline'

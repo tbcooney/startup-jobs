@@ -1,3 +1,19 @@
+#filter {
+	.nav {
+		margin: 2rem 0;
+		border-bottom: 1px solid $light_gray;
+		a {
+			text-decoration: none;
+			padding-right: 2rem;
+			color: $light_gray;
+		    font-size: 1em;
+		    font-weight: 600;
+			&:hover {
+				color: $red;
+			}
+		}
+	}
+}
 .section_header {
 	color: $light_gray;
 	margin: 1rem 0;
@@ -52,6 +68,9 @@
 #list_jobs {
 	ol {
 		padding: 0;
+	}
+	.list_job_group_date {
+		padding: 1rem 0;
 		color: #C0C1C1;
 	    margin: 1rem 0;
 	    font-size: 1em;
@@ -59,11 +78,14 @@
 	}
 	li {
 		list-style: none;
+		transition: all 0.25s ease 0s;
+		&:hover {
+			background-color: #eee;
+		}
 	}
 	.job {
 		display: block;
-		margin: 1rem 1%;
-		padding: 1.5rem 0;
+		padding: 1.5rem 1%;
 		border-bottom: 1px solid #dce0e0;
 		position: relative;
 		font-weight: 400;
