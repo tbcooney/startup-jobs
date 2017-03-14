@@ -1,13 +1,18 @@
 #filter {
 	.nav {
-		margin: 2rem 0;
+		margin: 5rem 0 2rem;
 		border-bottom: 1px solid $light_gray;
+		li {
+			display: inline-block;
+			list-style: none;
+			padding-bottom: 1rem;
+		    font-size: 1.2rem;
+		}
 		a {
 			text-decoration: none;
 			padding-right: 2rem;
-			color: $light_gray;
-		    font-size: 1em;
-		    font-weight: 600;
+			color: #767676;
+		    font-weight: 700;
 			&:hover {
 				color: $red;
 			}
@@ -15,7 +20,7 @@
 	}
 }
 .section_header {
-	color: $light_gray;
+	color: #767676;
 	margin: 1rem 0;
 	font-size: 1em;
 	font-weight: 700;
@@ -69,13 +74,6 @@
 	ol {
 		padding: 0;
 	}
-	.list_job_group_date {
-		padding: 1rem 0;
-		color: #C0C1C1;
-	    margin: 1rem 0;
-	    font-size: 1em;
-	    font-weight: 700;
-	}
 	li {
 		list-style: none;
 		transition: all 0.25s ease 0s;
@@ -83,12 +81,19 @@
 			background-color: #eee;
 		}
 	}
+	.list_job_group_date {
+		padding: 1rem 0;
+		color: #767676;
+	    margin: 1rem 0;
+	    font-size: 1em;
+	    font-weight: 700;
+	}
 	.job {
 		display: block;
 		padding: 1.5rem 1%;
 		border-bottom: 1px solid #dce0e0;
 		position: relative;
-		font-weight: 400;
+		font-weight: 700;
 		.title {
 			@include bold_font;
 			color: $red;
@@ -97,12 +102,12 @@
 		}
 		.company {
 			display: inline-block;
-			color: black;
+			color: #767676;
 			font-size: .85rem;
 		}
 		.job_url {
 			display: inline-block;
-			color: black;
+			color: #767676;
 			float: right;
 			font-size: .85rem;
 		}

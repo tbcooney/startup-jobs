@@ -249,6 +249,13 @@ label {
     padding-left: 3px;
 }
 
+.pagination {
+	font-weight: 700;
+	em, span {
+		color: #FFBFC1;
+	}
+}
+
 .forgot-password {
 	display: inline-block;
 	float: right;

@@ -1,4 +1,4 @@
-.wrapper_with_padding
+.wrapper
 	#banner
 		.banner_content
 			%h1 <strong>Toronto Startup Jobs.</strong> Find the next journey that awaits you in Toronto.
@@ -8,7 +8,7 @@
 
 	.section_header Now Hiring
 	#featured_jobs.clearfix
-		- @jobs.each do |job|
+		- @featured_jobs.each do |job|
 			%a{ href: (url_for [job]) }
 				.job
 					%p.title= job.title

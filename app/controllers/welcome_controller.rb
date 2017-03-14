@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-	@jobs = Job.all.order("created_at DESC")
+	@featured_jobs = Job.where(featured_id: @featured_id.blank?).order("created_at DESC")
   end
 end
