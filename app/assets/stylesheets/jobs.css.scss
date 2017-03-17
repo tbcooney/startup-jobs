@@ -41,6 +41,7 @@
 		margin: 1rem 1%;
 		padding: 1.5rem 2.5%;
 		float: left;
+		font-weight: 700;
 		border-radius: .2rem;
 		position: relative;
 		.title {
@@ -48,24 +49,28 @@
 			color: $red;
 			margin: 0;
 			letter-spacing: 1px;
+			font-size: 1em;
 		}
 		.company {
 			display: inline-block;
-			color: black;
-			font-size: .85rem;
+			color: #767676;
+			font-size: .75rem;
+
 		}
 		.job_url {
 			display: inline-block;
 			float: right;
-			color: black;
-			font-size: .85rem;
+			color: #767676;
+			font-size: .75rem;
+
 		}
 		.date {
 			position: absolute;
 			bottom: .25rem;
 			left: 8.5%;
-			color: black;
-			font-size: .85rem;
+			color: #767676;
+			font-size: .75rem;
+
 		}
 	}
 }
@@ -99,17 +104,18 @@
 			color: $red;
 			margin: 0;
 			letter-spacing: 1px;
+			font-size: 1em;
 		}
 		.company {
 			display: inline-block;
 			color: #767676;
-			font-size: .85rem;
+			font-size: .75rem;
 		}
 		.job_url {
 			display: inline-block;
 			color: #767676;
 			float: right;
-			font-size: .85rem;
+			font-size: .75rem;
 		}
 	}
 }
