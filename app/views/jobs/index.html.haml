@@ -29,7 +29,7 @@
 				%ol
 					- @job_days.each do |day, jobs|
 						.list_job_group_date
-							= day.strftime("%B %U")
+							= day.strftime("%B %d")
 							- jobs.each do |job|
 								%li
 									%a{ href: (url_for [job]) }
