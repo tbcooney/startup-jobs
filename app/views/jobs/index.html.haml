@@ -21,7 +21,7 @@
 						.job
 							%p.title= job.title
 							%p.company= job.company
-							%p.job_url= job.url
+							%p.job_url= uri_parse(job.url)
 							%p.date= time_ago_in_words(job.created_at) + " ago"
 
 			.section_header All Jobs
@@ -36,5 +36,5 @@
 										.job
 											%p.title= job.title
 											%p.company= job.company
-											%p.job_url= job.url	
+											%p.job_url= uri_parse(job.url)
 				= will_paginate @jobs
