@@ -19,6 +19,7 @@
 				- @jobs.where(featured_id: @featured_id.blank?).each do |job|
 					%a{ href: (url_for [job]) }
 						.job
+							=image_tag job.company_logo.url
 							%p.title= job.title
 							%p.company= job.company
 							%p.job_url= uri_parse(job.url)

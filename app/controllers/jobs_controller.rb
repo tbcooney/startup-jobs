@@ -33,6 +33,7 @@ class JobsController < ApplicationController
 
 	def update
 		if @job.update(job_params)
+			flash[:notice] = "Changes saved."
 			redirect_to @job
 		else
 			render 'Edit'
@@ -51,6 +52,6 @@ class JobsController < ApplicationController
 	end
 
 	def job_params
-		params.require(:job).permit(:title, :description, :company, :url, :category_id, :company_logo)
+		params.require(:job).permit(:title, :description, :company, :url, :category_id)
 	end
 end
