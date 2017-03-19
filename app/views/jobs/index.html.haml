@@ -27,7 +27,7 @@
 			.section_header All Jobs
 			#list_jobs.clearfix
 				%ol
-					- @job_days.each do |day, jobs|
+					- @jobs.group_by {|job| job.created_at.to_date }.each do |day, jobs|
 						.list_job_group_date
 							= day.strftime("%B %d")
 							- jobs.each do |job|
