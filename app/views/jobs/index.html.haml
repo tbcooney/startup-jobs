@@ -16,7 +16,7 @@
 
 			.section_header Now Hiring
 			#featured_jobs.clearfix
-				- @featured_jobs.each do |job|
+				- @jobs.where(featured_id: @featured_id.blank?).each do |job|
 					%a{ href: (url_for [job]) }
 						.job
 							%p.title= job.title
@@ -38,5 +38,6 @@
 											%p.title= job.title
 											%p.company= job.company
 											%p.job_url= uri_parse(job.url)
-											=link_to "Apply", job, class: "button-apply"
+											%p.date= time_ago_in_words(job.created_at) + " ago"
+											= link_to "Apply", job, class: "button-apply"
 				= will_paginate @jobs

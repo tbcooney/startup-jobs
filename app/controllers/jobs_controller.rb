@@ -4,13 +4,11 @@ class JobsController < ApplicationController
 
 	def index
 		if params[:category].blank?
-			@featured_jobs = Job.where(featured_id: @featured_id.blank?).order("created_at DESC")
-			@jobs = Job.where(Job.arel_table[:created_at].gteq("%D")).order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
+			@jobs = Job.where(Job.arel_table[:created_at].gteq("%D")).order("created_at DESC").paginate(:page => params[:page], :per_page => 10)
 			@job_days = @jobs.group_by {|job| job.created_at.to_date }
 		else
-			@featured_jobs = Job.where(featured_id: @featured_id.blank?).order("created_at DESC")
 			@category_id = Category.find_by(name: params[:category]).id
-			@jobs = Job.where(category_id: @category_id).order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
+			@jobs = Job.where(category_id: @category_id).order("created_at DESC").paginate(:page => params[:page], :per_page => 10)
 			@job_days = @jobs.group_by {|job| job.created_at.to_date }
 		end
 	end
