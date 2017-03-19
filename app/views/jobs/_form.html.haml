@@ -1,5 +1,6 @@
-= simple_form_for @job do |f|
+= simple_form_for @job, :html => { :multipart => true } do |f|
 	= f.collection_select :category_id, Category.all, :id, :name, { prompt: "Choose a category" }
+	= f.input :company_logo, as: :file
 	= f.input :title, label: 'Job title'
 	= f.input :description, label: 'Job description'
 	= f.input :company, label: 'Your company'

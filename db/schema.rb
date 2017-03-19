@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170313205955) do
+ActiveRecord::Schema.define(version: 20170318224417) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -18,16 +18,30 @@ ActiveRecord::Schema.define(version: 20170313205955) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "feed_entries", force: :cascade do |t|
+    t.string   "name"
+    t.text     "content"
+    t.string   "url"
+    t.datetime "published_at"
+    t.string   "guid"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "jobs", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.string   "company"
     t.string   "url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.integer  "category_id"
     t.integer  "user_id"
     t.integer  "featured_id"
+    t.string   "company_logo_file_name"
+    t.string   "company_logo_content_type"
+    t.integer  "company_logo_file_size"
+    t.datetime "company_logo_updated_at"
   end
 
   create_table "users", force: :cascade do |t|

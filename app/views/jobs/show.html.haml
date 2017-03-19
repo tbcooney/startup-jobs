@@ -1,6 +1,7 @@
 .wrapper_with_padding
 	#job_show
 		%h1.title= @job.title
+		=image_tag @job.company_logo.url
 		%h2= @job.company
 		%p.date= time_ago_in_words(@job.created_at)
 		%p= @job.description

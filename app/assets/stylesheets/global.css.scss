@@ -119,17 +119,20 @@ button, .button-outline {
 }
 
 button, .button-apply {
-	display: block;
+	display: inline-block;
+	border: none;
 	outline: none;
-	border: 1px solid $red;
-	color: $red;
-	font-size: 1rem;
-	padding: 1rem 3.5rem;
+	background: $red;
+	color: white;
+	padding: 1% 1.5rem;
 	border-radius: 4px;
+	font-size: 12px;
+	font-weight: 700;
 	transition: all 0.25s ease 0s;
+	float: right;
 	&:hover {
-		border: 1px solid #ff7e82;
-		color: #ff7e82;
+		background-color: #ff7e82;
+		color: white;
 	}
 }
 
