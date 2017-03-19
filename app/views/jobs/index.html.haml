@@ -38,5 +38,5 @@
 											%p.title= job.title
 											%p.company= job.company
 											%p.job_url= uri_parse(job.url)
-											=link_to "Apply", job.url, class: "button-apply"
+											=link_to "Apply", job, class: "button-apply"
 				= will_paginate @jobs
