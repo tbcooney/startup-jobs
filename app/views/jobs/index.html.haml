@@ -17,10 +17,10 @@
 			.section_header Now Hiring
 			#featured_jobs.clearfix
 				- @jobs.where(featured_id: @featured_id.blank?).each do |job|
-					%a{ href: (url_for [job]) }
+					%a
 						.job
-							=image_tag job.company_logo.url
-							%p.title= job.title
+							=image_tag job.company_logo.url(:thumb)
+							%p.title= link_to (job.title), job
 							%p.company= job.company
 							%p.job_url= uri_parse(job.url)
 							%p.date= time_ago_in_words(job.created_at) + " ago"
@@ -33,10 +33,10 @@
 							= day.strftime("%B %d")
 							- jobs.each do |job|
 								%li
-									%a{ href: (url_for [job]) }
+									%a
 										.job
-											=image_tag job.company_logo.url
-											%p.title= job.title
+											=image_tag job.company_logo.url(:thumb)
+											%p.title= link_to (job.title), job
 											%p.company= job.company
 											%p.job_url= uri_parse(job.url)
 											%p.date= time_ago_in_words(job.created_at) + " ago"

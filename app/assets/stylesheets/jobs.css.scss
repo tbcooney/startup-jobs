@@ -85,10 +85,6 @@
 	}
 	li {
 		list-style: none;
-		transition: all 0.25s ease 0s;
-		&:hover {
-			background-color: #eee;
-		}
 	}
 	.list_job_group_date {
 		padding: 1rem 0;
@@ -116,6 +112,13 @@
 			margin: 0;
 			letter-spacing: 1px;
 			font-size: 1em;
+			transition: all 0.25s ease 0s;
+			a {
+				color: $red;
+				&:hover {
+					color: #ff7e82;
+				}
+			}
 		}
 		.company {
 			display: inline-block;
