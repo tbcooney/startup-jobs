@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
 	before_action :find_job, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user!,only:[:new]
+	impressionist actions: [:show], unique: [:impressionable_type, :impressionable_id, :session_hash]
 
 	def index
 		if params[:category].blank?

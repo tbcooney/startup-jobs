@@ -10,7 +10,8 @@
 		%div
 			.actions
 				= link_to "Apply For Job", @job.url, class: "button"
+				%p.date= "#{@job.impressionist_count} people have viewed this posting so far!"
 				- if (user_signed_in? && (current_user.id == @job.user_id))
 					= link_to 'Edit', edit_job_path(@job), class: 'button-outline'
 					= link_to 'Delete', job_path(@job), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button-outline'
-			= link_to 'Back To Jobs', jobs_path, class: 'button-outline'
+				= link_to 'Back To Jobs', jobs_path, class: 'button-outline'
